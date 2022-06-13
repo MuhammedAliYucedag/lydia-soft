@@ -29,7 +29,7 @@ node(){
         sh """ssh -t ${SERVER_USER}@${K8S_AZ2_NODE_IP} -o StrictHostKeyChecking=no \\"sudo chown ${SERVER_USER}:${SERVER_USER} ${BACKUP_PATH}/k8s_restore.tar.gz\\""""
     }
     stage('RESTORE FILES'){
-        sh """ssh -t ${SERVER_USER}@${K8S_AZ2_NODE_IP} -o StrictHostKeyChecking=no \\"sudo tar xC / -f ${BACKUP_PATH}/k8s_restore.tar.gz && sudo rm ${BACKUP_PATH}/*.tar.gz\\""""
+        sh """sh -t ${SERVER_USER}@${K8S_AZ2_NODE_IP} -o StrictHostKeyChecking=no \\"sudo tar xC / -f ${BACKUP_PATH}/k8s_restore.tar.gz && sudo rm ${BACKUP_PATH}/*.tar.gz\\""""
     }
 
     stage('CLEAN OLDER BACKUP FILES'){
