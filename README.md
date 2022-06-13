@@ -4,7 +4,7 @@ Run ``` docker build -t lydia-soft .```
 
 ### Check Docker Image
 
-Run `` docker images```
+Run ``` docker images ```
 
 You need to see lydia-sofy name there
 
